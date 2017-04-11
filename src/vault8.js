@@ -3,6 +3,7 @@ import crypto from 'crypto'
 import { required, seconds, reverse, isEmpty, flatten, compact } from './utils'
 
 class Vault8 {
+
   static create(options) {
     return new Vault8(options)
   }
@@ -18,8 +19,8 @@ class Vault8 {
   uploadUrl({path = '/upload', currentTime = Date.now(), untilTime = Date.now() + 86400000}) {
     return this.generateUrlFor({
       path,
-      currentTime: currentTime,
-      untilTime: untilTime
+      currentTime,
+      untilTime
     })
   }
 
@@ -89,6 +90,7 @@ class Vault8 {
       )))
       .join(',')
   }
+
 }
 
 export default Vault8
